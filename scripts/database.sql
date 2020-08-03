@@ -5,7 +5,7 @@
 -- Dumped from database version 12.3
 -- Dumped by pg_dump version 12.3
 
--- Started on 2020-08-01 20:14:09
+-- Started on 2020-08-03 20:27:23
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -27,11 +27,11 @@ CREATE SCHEMA "Acervo";
 
 
 --
--- TOC entry 347 (class 1255 OID 34049)
+-- TOC entry 299 (class 1255 OID 34053)
 -- Name: busca_acervo("text", "text"); Type: FUNCTION; Schema: Acervo; Owner: -
 --
 
-CREATE FUNCTION "Acervo"."busca_acervo"("p_query" "text", "p_search_type" "text" DEFAULT 'FTS'::"text", OUT "p_result" "json") RETURNS "json"
+CREATE FUNCTION "Acervo"."busca_acervo"("p_query" "text", "p_search_type" "text", OUT "p_result" "json") RETURNS "json"
     LANGUAGE "plpgsql"
     AS $$
 DECLARE
@@ -40,6 +40,8 @@ DECLARE
   Delta double precision;
 BEGIN
   	StartTime := clock_timestamp();
+	
+	p_search_type := upper(p_search_type);
 	
 	IF p_search_type = 'FTS' THEN
 		SELECT "Acervo".fts_busca_acervo(p_query) INTO p_result;
@@ -65,7 +67,7 @@ $$;
 
 
 --
--- TOC entry 346 (class 1255 OID 25770)
+-- TOC entry 347 (class 1255 OID 25770)
 -- Name: clear_db(); Type: PROCEDURE; Schema: Acervo; Owner: -
 --
 
@@ -135,7 +137,7 @@ $$;
 
 
 --
--- TOC entry 303 (class 1255 OID 34051)
+-- TOC entry 304 (class 1255 OID 34051)
 -- Name: import_csv("text"); Type: FUNCTION; Schema: Acervo; Owner: -
 --
 
@@ -1061,7 +1063,7 @@ ALTER TABLE ONLY "Acervo"."obra"
     ADD CONSTRAINT "fkc_obra_material_id" FOREIGN KEY ("material_id") REFERENCES "Acervo"."material"("material_id") NOT VALID;
 
 
--- Completed on 2020-08-01 20:14:09
+-- Completed on 2020-08-03 20:27:23
 
 --
 -- PostgreSQL database dump complete
