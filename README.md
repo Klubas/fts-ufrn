@@ -6,8 +6,7 @@ Implementação de busca textual usando técnicas de FTS e comparando com uma bu
 
 ### Uso (API)
 
-    curl --header "Content-Type: application/json" --request POST --data '{"query": "Assim falou Zaratustra", "type": "FTS"}' http://localhost:5000/busca_acervo/
-    
+    curl --header "Content-Type: application/json" --request POST --data '{\"query\": \"Assim falou Zaratustra\", \"type\": \"FTS\"}' http://localhost:5000/busca_acervo/
 
 ### Uso (DB):
 
