@@ -1,2 +1,11 @@
-/.env
-venv/
+__pycache__/
+*.pyc
+*.mp3
+.vscode/
+env/
+/Adafruit_CharLCD.egg-info/
+/build/
+/dist/
+/venv/
+.idea/
+.env
