@@ -29,12 +29,20 @@ searchAcervo = async (searchQuery, searchType) => {
 };
 
 function removeDados() {
+
+    const buttonFTS = document.getElementById('buttonFTS')
+    buttonFTS.setAttribute('disabled', 'true')
+
+    const buttonNormal = document.getElementById('buttonNormal')
+    buttonNormal.setAttribute('disabled', 'true')
+
     try {
         const container = document.getElementById('container')
         container.remove()
 
         const pText = document.getElementById('pText')
         pText.remove()
+
 
     } catch (err){
 
@@ -77,7 +85,12 @@ function exibeDados(data) {
         card.appendChild(h1)
     })
 
-    return obras
+    const buttonFTS = document.getElementById('buttonFTS')
+    buttonFTS.removeAttribute("disabled")
+
+    const buttonNormal = document.getElementById('buttonNormal')
+    buttonNormal.removeAttribute("disabled")
+
 };
 
 
