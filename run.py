@@ -4,11 +4,13 @@ import argparse
 
 from flask import Flask
 from flask_restful import Api
-from app.views import Index, Search, Result
+from app.view.views import Index, Search, Result
 
 if __name__ == '__main__':
 
-    app = Flask(__name__, template_folder=os.path.join('app', 'templates'))
+    app = Flask(__name__,
+                template_folder=os.path.join('app', 'templates'),
+                static_folder=os.path.join('app', 'static'))
     api = Api(app)
 
     # add resources

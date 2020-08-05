@@ -3,7 +3,7 @@ import logging
 from flask import request
 from flask_restful import Resource
 from flask import render_template, make_response
-from app.models.DataBase import DataBase
+from app.model.DataBase import DataBase
 
 
 db = DataBase()
@@ -59,6 +59,4 @@ class Search(Resource):
                 return {'Status': 'OK', 'Response': status}, 200
             else:
                 return {'Status': str(status)}, 21
-
-
 
