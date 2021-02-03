@@ -8,6 +8,7 @@ Implementação de busca textual usando técnicas de FTS e comparando com uma bu
 
 Necessário ter o docker compose instalado, instruções em: https://docs.docker.com/compose/install/
 
+	mv ./.env.public ./.env
 	cd ./fts-ufrn
 	docker-compose up
 
