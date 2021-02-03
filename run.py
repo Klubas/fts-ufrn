@@ -51,23 +51,12 @@ if __name__ == '__main__':
 
         # app.config['EXPLAIN_TEMPLATE_LOADING'] = True
 
-        success = False
-        max = 100
-        while not success and max > 0:
-            try:
-                app.run(
-                    host=host
-                    , port=port
-                    , debug=args.debug
-                )
-                success = True
-            except:
-                import time
-                print("Service startup failed...")
-                time.sleep(10)
-                print("Retrying...")
-                max = max - 1
-
+        app.run(
+            host=host
+            , port=port
+            , debug=args.debug
+        )
+ 
     except (KeyboardInterrupt, SystemExit):
         print("\nExiting...")
 
