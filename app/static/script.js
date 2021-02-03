@@ -87,6 +87,8 @@ function exibeDados(data) {
         card.appendChild(h1)
     })
 
+    history.replaceState({}, null, "/");
+
     const buttonFTS = document.getElementById('buttonFTS')
     buttonFTS.removeAttribute("disabled")
 
