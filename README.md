@@ -4,6 +4,15 @@
 
 Implementação de busca textual usando técnicas de FTS e comparando com uma busca sem FTS.
 
+### Uso Docker
+
+Necessário ter o docker compose instalado, isntruções em: https://docs.docker.com/compose/install/
+
+	cd ./fts-ufrn
+	docker-compose up
+
+Assim que terminar de construir e subir o container, o serviço estará disponível em http://localhost:80 .
+
 ### Uso (API)
 
     curl --header "Content-Type: application/json" --request POST --data '{\"query\": \"Assim falou Zaratustra\", \"type\": \"FTS\"}' http://localhost:5000/busca_acervo/

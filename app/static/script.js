@@ -1,4 +1,3 @@
-
 searchAcervo = async (searchQuery, searchType) => {
 
     removeDados()
@@ -55,7 +54,7 @@ function exibeDados(data) {
     const container = document.createElement('div')
     container.setAttribute('class', 'container')
     container.setAttribute('id', 'container')
-    results.appendChild(container)
+    
 
     delta = data[0]
     quantidade = data[1]
@@ -67,7 +66,10 @@ function exibeDados(data) {
 
     textNode = document.createTextNode(quantidade + ' resultados em ' + delta + 'ms.')
     pText.appendChild(textNode)
-    search.appendChild(pText)
+    //search.appendChild(pText)
+
+    results.appendChild(pText)
+    results.appendChild(container)
 
     obras.forEach((obra) => {
 

@@ -1,6 +1,18 @@
 #search {
-  max-width: 1200rem;
+  display: flex;
+  max-width: 100%;
+  min-width: 50%;
   margin: 0 auto;
+  padding: 1cm;
+}
+
+#searchFields {
+  padding: 1cm;
+  align-content: center;
+}
+
+#searchField {
+  min-width: 500px;
 }
 
 #results {
@@ -14,8 +26,11 @@
 }
 
 .card {
-  margin: 1rem;
-  border: 1rem solid gray;
+  padding-left: 1cm;
+  padding-right: 1cm;
+  border: 1px solid gray;
+  min-width: 99%;
+  font-size: small;
 }
 
 @media screen and (min-width: 600rem) {
