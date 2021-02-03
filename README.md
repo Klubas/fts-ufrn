@@ -4,7 +4,7 @@
 
 Implementação de busca textual usando técnicas de FTS e comparando com uma busca sem FTS.
 
-### Uso Docker
+### Docker
 
 Necessário ter o docker compose instalado, instruções em: https://docs.docker.com/compose/install/
 
