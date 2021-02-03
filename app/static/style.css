@@ -1,10 +1,10 @@
 #search {
-  max-width: 1200px;
+  max-width: 1200rem;
   margin: 0 auto;
 }
 
 #results {
-  max-width: 2000px;
+  max-width: 2000rem;
   margin: 0 auto;
 }
 
@@ -15,16 +15,16 @@
 
 .card {
   margin: 1rem;
-  border: 1px solid gray;
+  border: 1rem solid gray;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 600rem) {
   .card {
     flex: 1 1 calc(50% - 2rem);
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 900rem) {
   .card {
     flex: 1 1 calc(33% - 2rem);
   }

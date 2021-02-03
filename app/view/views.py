@@ -5,9 +5,19 @@ from flask_restful import Resource
 from flask import render_template, make_response
 from app.model.DataBase import DataBase
 
+success = False
+max = 100
 
-db = DataBase()
-
+while not success and max > 0:
+    try:
+        db = DataBase()
+        success = True
+    except:
+        import time
+        print("DB connection failed...")
+        time.sleep(10)
+        print("Retrying...")
+        max = max - 1
 
 class Index(Resource):
     @staticmethod

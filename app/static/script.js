@@ -3,7 +3,7 @@ searchAcervo = async (searchQuery, searchType) => {
 
     removeDados()
 
-    const url = 'http://127.0.0.1:5000/busca_acervo/';
+    const url = currentLocation + '/busca_acervo/';
     const settings = {
         method: 'POST',
         headers: {
@@ -97,6 +97,9 @@ function exibeDados(data) {
 const buttonFTS = document.getElementById('buttonFTS')
 const buttonNormal = document.getElementById('buttonNormal')
 const searchField = document.getElementById('searchField')
+
+const currentLocation = window.location.href
+console.log(currentLocation)
 
 buttonFTS.addEventListener('click',
     function(){searchAcervo(searchField.value,'FTS')}
